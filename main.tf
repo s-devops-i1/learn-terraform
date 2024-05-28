@@ -2,7 +2,7 @@ module "frontend" {
   source = "./01-modules/app"
   instance_type = var.instance_type
   security_group_id = var.security_group_id
-  name              =  "frontend"
+  Name              =  "frontend"
 
 
 }
@@ -10,12 +10,12 @@ module "backend" {
   source = "./01-modules/app"
   instance_type = var.instance_type
   security_group_id = var.security_group_id
-  name              = "backend"
+  Name              = "backend"
 }
 module "mysql" {
   source = "./01-modules/app"
   instance_type = var.instance_type
   security_group_id = var.security_group_id
-  name              = "mysql"
+  Name              = "mysql"
 }
 
