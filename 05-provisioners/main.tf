@@ -21,7 +21,6 @@ resource "aws_instance" "test" {
 }
 
 
-variable "security_group_id" {}
 
 data "aws_security_group" "selected" {
   name = "allow-all"
