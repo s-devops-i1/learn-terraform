@@ -3,14 +3,17 @@ resource "aws_instance" "test" {
   instance_type = "t3.micro"
   vpc_security_group_ids = [data.aws_security_group.selected.id]
 
-    provisioner "remote-exec" {
 
-      connection {
-        type     = "ssh"
-        user     = "ec2-user"
-        password = "DevOps321"
-        host     = self.public_ip
-      }
+}
+resource "null_resource" "provisioner" {
+  provisioner "remote-exec" {
+
+    connection {
+      type     = "ssh"
+      user     = "ec2-user"
+      password = "DevOps321"
+      host     = aws_instance.test.public_ip
+    }
 
     inline = [
       "dnf install nginx -y",
@@ -19,7 +22,6 @@ resource "aws_instance" "test" {
   }
 
 }
-
 
 
 data "aws_security_group" "selected" {
