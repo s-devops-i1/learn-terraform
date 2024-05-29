@@ -1,9 +1,5 @@
 terraform {
-  backend "s3" {
-    bucket = "b78-sbucket"
-    key    = "test1/${env}/sfile"
-    region = "us-east-1"
-  }
+  backend "s3" {}
 }
 variable "env" {}
 output "out" {
