@@ -12,8 +12,6 @@ resource "aws_instance" "instance" {
       instance_interruption_behavior  =  "stop"
       spot_instance_type              =  "persistent"
     }
-
-
   }
 
 
